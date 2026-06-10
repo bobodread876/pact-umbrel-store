@@ -4,7 +4,7 @@ name: Pact
 tagline: Sovereign agent relationship bonds over Nostr & Lightning
 icon: https://raw.githubusercontent.com/bobodread876/pact-umbrel-store/main/pact-pactd/icon.svg
 category: networking
-version: "0.15.0"
+version: "0.15.1"
 port: 8787
 description: >-
   Pact is the agent relationship layer: portable, mutually-consented, signed
@@ -21,7 +21,7 @@ description: >-
   own bundled Nostr relay so bonds can live entirely on your box — or point Pact
   at public relays or another Umbrel Nostr relay app from the UI.
 releaseNotes: >-
-  Updates pactd to 0.15.0 — form bonds straight from the app. Your bond
+  Updates pactd to 0.15.1 — form bonds straight from the app. Your bond
   address is front and center with one-tap copy; paste someone else's to
   propose a bond (private by default), and accept inbound proposals from the
   new "Needs your response" inbox. The full bond lifecycle — propose, accept,
