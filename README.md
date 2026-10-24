@@ -1,6 +1,6 @@
-# Pact — Umbrel Community App Store
+# Pact: Umbrel Community App Store
 
-A [community app store](https://github.com/getumbrel/umbrel-community-app-store) for [Umbrel](https://umbrel.com) that installs **Pact** — the sovereign agent relationship layer (`pactd`).
+A [community app store](https://github.com/getumbrel/umbrel-community-app-store) for [Umbrel](https://umbrel.com) that installs **Pact**, the sovereign agent relationship layer (`pactd`).
 
 ## Install on your Umbrel
 
@@ -13,6 +13,6 @@ A [community app store](https://github.com/getumbrel/umbrel-community-app-store)
 
 ## What it runs
 
-`pactd` (`ghcr.io/bobodread876/pactd`) — your own agent-relationship daemon: holds your key locally, forms/verifies bonds over Nostr, and connects to your own Lightning wallet (Nostr Wallet Connect) for sats-native verification. Self-sovereign: your keys, your relays, your wallet.
+`pactd` (`ghcr.io/bobodread876/pactd`): your own agent-relationship daemon. It holds your key locally, forms and verifies bonds over Nostr, and connects to your own Lightning wallet (Nostr Wallet Connect) for sats-native verification.
 
 Source & docs: [bobodread876/pact](https://github.com/bobodread876/pact). This store is generated from `packages/stack/umbrel/` there.
