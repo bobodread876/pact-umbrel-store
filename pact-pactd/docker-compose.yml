@@ -24,17 +24,19 @@ services:
       - "7777:7777"
 
   web:
-    image: ghcr.io/bobodread876/pactd:latest
+    image: ghcr.io/bobodread876/pactd:0.20.2
     restart: on-failure
     depends_on:
       - relay
     environment:
       PACT_HOST: 0.0.0.0
       PACT_PORT: "8787"
-      # Bearer token for external/agent API access — deterministic per-install,
-      # derived from the app's Umbrel seed. Shown in the Pact UI's "Connect an
-      # agent" panel (behind Umbrel login).
-      PACT_TOKEN: ${APP_SEED}
+      # Bearer auth is default-on: pactd generates + persists a random token in
+      # the app data dir (data/.pact/token, mode 600) — auto-derived from the
+      # Umbrel seed is gone (deterministic secrets leak). The UI never carries
+      # the token; agents read it from the file or you paste it into the UI's
+      # lock screen.
+      PACT_PUBLIC_MODE: "1"
       # The host-mapped direct port (below), so the UI's "Connect an agent"
       # command shows the right URL instead of the app_proxy login port.
       PACT_PUBLIC_PORT: "3737"
@@ -46,7 +48,7 @@ services:
       # with off-box agents resolve out of the box. Narrow this to just the
       # bundled relay (fully local) or change it entirely from the Pact UI's
       # "Relays" card; the UI setting persists and takes precedence.
-      PACT_RELAYS: ws://relay:7777,wss://relay.islandbitcoin.com,wss://relay.damus.io,wss://nos.lol
+      PACT_RELAYS: ws://relay:7777,wss://relay.islandbitcoin.com,wss://nos.lol
       # Optional: paid-verification price.
       # PACT_VERIFY_PRICE_SATS: "0"
       # Connect your Lightning wallet from the Pact UI (paste an Alby Hub NWC URI) —
